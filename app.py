@@ -88,10 +88,12 @@ def search():
         gsheetid = '1v_14EKTFW_UrgueMh2p4qwu8vXo8epVlNlpn4aQKMsw'
 
     elif submit_value == 'SCAakashsir':
+        a=0
         mst_df = pd.read_excel(mst_java)
         sub_df=pd.read_excel(sub_java)
         gsheetid = '1wqrXEnrXBk_4rRhvjR3rURNBwlqIw0JA22YiZnTpp5k'
     elif submit_value == 'SCAshivamsir':
+        a=0
         mst_df = pd.read_excel(mst_java)
         sub_df=pd.read_excel(sub_java)
         gsheetid = '1v_14EKTFW_UrgueMh2p4qwu8vXo8epVlNlpn4aQKMsw'
@@ -160,7 +162,7 @@ def search():
             a_count = counts['A']
             n=len(sorted_list)
             generate_list = lambda n: list(range(1, n+1))
-            return render_template('home.html',submit_value=submit_value, sorted_list=sorted_list, p_count=p_count, a_count=a_count,Sr_no=generate_list(n),name1=name1,lis=lis,mst1=mst1,mst2=mst2,mst3=mst3,sub1=sub1,sub2=sub2,sub3=sub3)
+            return render_template('home.html',submit_value=submit_value,a=a, sorted_list=sorted_list, p_count=p_count, a_count=a_count,Sr_no=generate_list(n),name1=name1,lis=lis,mst1=mst1,mst2=mst2,mst3=mst3,sub1=sub1,sub2=sub2,sub3=sub3)
         else:
             return render_template('founderror.html',a=a)
     except Exception as e:
